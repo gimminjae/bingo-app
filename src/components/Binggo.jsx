@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import './BinggoGame.css';
+import './BingoGame.css';
 
 function BingoGame() {
   const [board, setBoard] = useState(() => {
@@ -8,8 +8,7 @@ function BingoGame() {
     return savedBoard ? JSON.parse(savedBoard) : Array(5).fill().map(() => Array(5).fill(null));
   });
 
-  const handleClick = (rowIndex, colIndex) => {
-    const color = window.confirm("확인: 파랑\n취소: 빨강") ? 'blue' : 'red';
+  const handleColorChange = (rowIndex, colIndex, color) => {
     const newBoard = board.map((row, rIdx) => 
       row.map((cell, cIdx) => 
         rIdx === rowIndex && cIdx === colIndex ? color : cell
@@ -61,13 +60,17 @@ function BingoGame() {
           row.map((cell, colIndex) => (
             <div
               key={`${rowIndex}-${colIndex}`}
-              onClick={() => handleClick(rowIndex, colIndex)}
               className="bingo-cell"
               style={{
                 backgroundColor: cell || 'white',
               }}
             >
               <span className="cell-number">{rowIndex * 5 + colIndex + 1}</span>
+              <div className="color-buttons">
+                <button onClick={() => handleColorChange(rowIndex, colIndex, 'blue')}>파랑</button>
+                <button onClick={() => handleColorChange(rowIndex, colIndex, 'red')}>빨강</button>
+                <button onClick={() => handleColorChange(rowIndex, colIndex, 'white')}>하양</button>
+              </div>
             </div>
           ))
         )}
