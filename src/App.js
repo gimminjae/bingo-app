@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg"
+import "./App.css"
+import BingoGame from "./components/Binggo"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      // style={{
+      //   marginTop: 10,
+      //   marginBottom: 10,
+      //   marginLeft: 10,
+      //   marginRight: 10,
+      // }}
+    >
+      <BingoGame />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

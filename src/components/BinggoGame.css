@@ -1,0 +1,36 @@
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px; /* 칸 사이의 간격을 10px로 설정 */
+  width: 100vw;
+  height: 90vh; /* 아래 버튼을 위해 높이를 90vh로 조정 */
+  box-sizing: border-box; /* 여백 포함 */
+}
+
+.bingo-cell {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.reset-button:hover {
+  background-color: #d32f2f;
+}
