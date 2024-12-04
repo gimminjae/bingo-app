@@ -1,7 +1,7 @@
 .bingo-board {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 10px; /* 칸 사이의 간격을 10px로 설정 */
   width: 100vw;
   height: 90vh; /* 아래 버튼을 위해 높이를 90vh로 조정 */
