@@ -1,11 +1,23 @@
+.bingo-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
 .bingo-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 10px; /* 칸 사이의 간격을 10px로 설정 */
-  width: 100vw;
-  height: 90vh; /* 아래 버튼을 위해 높이를 90vh로 조정 */
-  box-sizing: border-box; /* 여백 포함 */
+  gap: 10px;
+  width: 80vmin;
+  height: 80vmin;
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .bingo-cell {
@@ -34,6 +46,7 @@
   bottom: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
+  z-index: 10;
 }
 
 .bingo-cell:hover .color-buttons {
